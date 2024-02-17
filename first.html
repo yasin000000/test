@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container mt-2">
+        <div class="row justify-content-center">
+            <div class="col-6 col-md-auto">
+                <div class="btn-group me-3" role="group" aria-label="First group">
+                    <button class="btn btn-border-success" onclick="toggleTable('assistanceTable')">Need
+                        Assistance?</button>
+                </div>
+            </div>
+            <div class="col-6 col-md-auto">
+                <div class="btn-group me-3" role="group" aria-label="Second group">
+                    <button class="btn btn-border-success" onclick="toggleTable('quoteTable')">Get A Quote</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="quoteTable" class="container mt-2" style="display: none;">
+        <div class="container justify-content-center">
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="row m-3">
+                    <p><b>Origin</b></p>
+                    <div class="col-md-3">
+                        <label for="exampleFormControlInput1" class="form-label">Country Name</label>
+                        <span class="input-group  ">
+                            <img src="logo.png" alt="Canada Flag" width="60" height="55">
+                            <input type="text" class="form-control " placeholder="Canada" id="exampleFormControlInput1">
+
+                        </span>
+                        <span>This is your billing address</span>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="exampleFormControlInput1" class="form-label">Province Name</label>
+                        <input type="email" class="form-control shadow-sm p-3 mb-5 bg-body-tertiary rounded"
+                            id="exampleFormControlInput1" placeholder="Enter Province Name">
+                    </div>
+                    <div class="w-100 d-md-none"></div><!-- Adds a line break on small screens -->
+                    <div class="col-md-3">
+                        <label for="exampleFormControlInput1" class="form-label">City Name</label>
+                        <input type="email" class="form-control shadow-sm p-3 mb-5 bg-body-tertiary rounded"
+                            id="exampleFormControlInput1" placeholder="Enter City Name">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="exampleFormControlInput1" class="form-label">Postal Code</label>
+                        <input type="email" class="form-control shadow-sm p-3 mb-5 bg-body-tertiary rounded"
+                            id="exampleFormControlInput1" placeholder="Enter Your Postal Code  E.g A9A 9A9" required>
+                    </div>
+                </div>
+
+                <div class="row m-3">
+                    <p><b>Destination</b></p>
+                    <div class="col-md-3">
+                        <label for="exampleFormControlInput1" class="form-label">Country Name</label>
+                        <span class="input-group  ">
+                            <img src="logo.png " alt="Canada Flag" width="60" height="50">
+                            <input type="text" class="form-control shadow-sm p-3 mb-5 bg-body-tertiary rounded"
+                                placeholder="Canada" id="exampleFormControlInput1">
+                        </span>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="exampleFormControlInput1" class="form-label">Province Name</label>
+                        <input type="email" class="form-control shadow-sm p-3 mb-5 bg-body-tertiary rounded"
+                            id="exampleFormControlInput1" placeholder="Enter Province Name">
+                    </div>
+                    <div class="w-100 d-md-none"></div><!-- Adds a line break on small screens -->
+                    <div class="col-md-3">
+                        <label for="exampleFormControlInput1" class="form-label">City Name</label>
+                        <input type="email" class="form-control shadow-sm p-3 mb-5 bg-body-tertiary rounded"
+                            id="exampleFormControlInput1" placeholder="Enter City Name">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="exampleFormControlInput1" class="form-label">Postal Code</label>
+                        <input type="email" class="form-control shadow-sm p-3 mb-5 bg-body-tertiary rounded"
+                            id="exampleFormControlInput1" placeholder="Enter Your Postal Code  E.g A9A 9A9" required>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+        <!-- seconddiv start -->
+        <div class="container mt-2">
+            <div class="row justify-content-center">
+                <div class="col-md-3">
+                    <div class="d-grid gap-2">
+                        <button id="showHideButton"
+                            class="btn border border-success rounded-pill p-3 bg-danger text-white fixed-size-button"
+                            onclick="toggleDiv()">Describe Your Shipment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div id="shipmentDetails" class="container mt-3  " style="display: none;">
+            <div class="shadow">
+                <div class="container justify-content-center">
+                    <form class="row g-3 needs-validation" novalidate>
+                        <div class="row m-3">
+                            <div class="col-12 col-md-1"></div> <!-- Empty column for centering -->
+                            <div class="col-12 col-md-1">
+                                <label for="exampleFormControlInput1" class="form-label "><b>Weight</b></label>
+                                <input type="text" class="form-control mb-3" placeholder="Weight (kg)">
+                            </div>
+                            <div class="col-12 col-md-1 m-3">
+                                <img src="box1.png" alt="" style="max-width: 100px; height: auto;">
+                            </div>
+                            <div class="col-12 col-md-1">
+                                <label for="exampleFormControlInput2" class="form-label"><b>Dimensions</b></label>
+                                <input type="text" class="form-control mb-3" placeholder="Length (cm)">
+                            </div>
+                            <div class="col-12 col-md-1">
+                                <h1 class="content mt-4">&#215;</h1>
+                            </div>
+                            <div class="col-12 col-md-1 mt-2 ms-0">
+                                <input type="text" class="form-control mt-4" placeholder="Width (cm)">
+                            </div>
+                            <div class="col-12 col-md-1 ms-3">
+                                <h1 class="content mt-4">&#215;</h1>
+                            </div>
+                            <div class="col-12 col-md-1 mt-3 ms-3">
+                                <input type="text" class="form-control mt-3" placeholder="Height (cm)">
+                            </div>
+                            <div class="col-12 col-md-1"></div> <!-- Empty column for centering -->
+                        </div>
+                        <hr>
+
+                        <div class="row m-3">
+                            <h5><b>Not Sure about the sizes?</b></h5>
+                            <div class="col-md-3">
+                                <span class="input-group">
+                                    <img src="A4Envelope.png" alt="Canada Flag">
+
+                                </span>
+                            </div>
+                            <div class="col-md-3">
+                                <span class="input-group">
+                                    <img src="One or two books.png" alt="Canada Flag">
+
+                                </span>
+                            </div>
+                            <div class="w-100 d-md-none"></div><!-- Adds a line break on small screens -->
+                            <div class="col-md-3">
+                                <span class="input-group">
+                                    <img src="Shoe box.png" alt="Canada Flag">
+
+                                </span>
+                            </div>
+                            <div class="col-md-2 p-3">
+                                <span class="input-group">
+                                    <img src="Movingboc.png" alt="Canada Flag">
+
+                                </span>
+                            </div>
+
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <h5>Total Shipment Weight:66 kg</h5><br><br>
+            <div class="position-relative">
+                <div class="form-check position-absolute bottom-0 end-0">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <h5> Shipment contains exclusively documents</h5>
+                </div>
+            </div>
+<br><br>
+
+            <div class="container mt-2">
+                <div class="row justify-content-center">
+                    <div class="col-md-3">
+                        <div class="d-grid gap-2">
+                            <button id="showHideButton"
+                                class="btn border border-success rounded-pill p-3 bg-danger text-white fixed-size-button"
+                                onclick="toggleDiv2()">Get A Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <br>
+
+            <div id="QuoteDetails" class="container mt-3 " style="display: none;">
+                <div class="container mt-3 ">
+                    <h3 class="text-center"><b>Your Quotes</b></h3>
+                    <h6 class="text-center"><b>Select a quote to start booking your shipment</b></h6>
+
+                    <div class="container">
+                        <input type="text" class=" shadow-sm p-3 mb-5 bg-body-tertiary rounded"
+                            id="exampleFormControlInput1" placeholder="Shipment Date 21 Nov 2023">
+                    </div>
+
+                    <div class="container shadow p-5  mb-5 bg-body-tertiary rounded">
+                        <div class="row">
+                            <div class="col">
+                                Estimate delivery <br>
+
+                                <b>Mon,27 November</b> | latest by end of day <br>
+
+                                Book by 21-11-2023 by 17:00 for a pick-up-today
+                            </div>
+                            <div class="col">
+                                <div class="d-grid gap-2 col-6 mx-auto">
+                                    <h6>Include GST $340.36</h6>
+                                    <button class="btn btn-danger" type="button">Continue to Booking</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="container mt-2">
+                        <div class="d-flex justify-content-center  d-grid gap-2 col-6 mx-auto">
+                            <div class="btn-group me-3" role="group" aria-label="First group">
+                                <button class="btn border border-danger text-danger ">Email Quotes</button>
+                            </div>
+                            <div class="btn-group me-3 " role="group" aria-label="Second group">
+                                <button class="btn border border-danger text-danger">Copy Link</button>
+                            </div>
+                            <div class="btn-group me-3 " role="group" aria-label="Second group">
+                                <button class="btn border border-danger text-danger">Print Quotes</button>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br><br>
+
+                    <div class="containe ">
+                        <div class="d-flex justify-content-center ">
+
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad veritatis voluptatum nihil
+                                unde
+                                quas
+                                repudiandae cumque explicabo ducimus aut ipsum sit quaerat atque quo porro, adipisci
+                                accusantium
+                                molestiae dicta veniam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+                                aperiam
+                                labore adipisci veritatis mollitia velit maxime quaerat? Ab cupiditate harum voluptatem
+                                natus
+                                impedit voluptate accusantium quo accusamus sapiente, nesciunt veritatis!</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        function toggleTable(tableId) {
+            var table = document.getElementById(tableId);
+            if (table.style.display === "none") {
+                table.style.display = "block";
+            } else {
+                table.style.display = "none";
+            }
+        }
+
+        function toggleDiv() {
+            var div = document.getElementById("shipmentDetails");
+            if (div.style.display === "none") {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        }
+         function toggleDiv2() {
+            var div = document.getElementById("QuoteDetails");
+            if (div.style.display === "none") {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
